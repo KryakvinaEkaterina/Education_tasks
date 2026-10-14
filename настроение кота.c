@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main(void) {
+    int hour;
+    printf("Кото-астролог: введите текущий час (0-23): ");
+    if (scanf("%d", &hour) != 1) {
+        printf("Это не похоже на час. Кот обиделся.\n");
+        return 1;
+    }
+
+    hour = ((hour % 24) + 24) % 24;
+
+    printf(" Прогноз настроения кота:\n");
+    switch (hour) {
+        case 0: case 1: case 2: case 3: case 4: case 5:
+            printf("Спит, притворяется статуей. Не будить!\n");
+            break;
+        case 6: case 7:
+            printf("Требует завтрак. Громко. Срочно.\n");
+            break;
+        case 8: case 9: case 10: case 11:
+            printf("Мурчит и топчет плед. Всё хорошо.\n");
+            break;
+        case 12: case 13: case 14: case 15:
+            printf("Лежит в форме буквы Г. Медитирует.\n");
+            break;
+        case 16: case 17:
+            printf("Планирует ночной тыгыдык. Прячьте провода.\n");
+            break;
+        case 18: case 19: case 20:
+            printf("Устраивает тыгыдык прямо сейчас. Сочувствуем соседям.\n");
+            break;
+        default: 
+            printf("Смотрит на тебя, как на врага. Подозревает заговор.\n");
+            break;
+    }
+
+    return 0;
+}
