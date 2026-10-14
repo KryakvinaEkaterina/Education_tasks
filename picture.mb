@@ -1,0 +1,21 @@
+erDiagram
+    DRONE ||--o{ FLIGHT : "участвует в"
+    OPERATOR ||--o{ FLIGHT : "выполняет"
+
+    DRONE {
+        string model PK
+        string id PK
+        string type
+    }
+
+    OPERATOR {
+        string name
+        string id PK
+        string shift
+    }
+
+    FLIGHT {
+        int time_minutes
+        string operator_name
+        string drone_type
+    }
